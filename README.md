@@ -1,3 +1,5 @@
+# docker快速启动
+docker run --net=host --name grass --restart=always -d  -e MT_GRASS_ID="你的用户id"  yanfive/grass
 # getgrass.io脚本
 
 ### 本项目为grass运行脚本
