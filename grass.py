@@ -5,7 +5,7 @@ import random
 import ssl
 import time
 import uuid
-
+import os
 import websockets
 from faker import Faker
 from websockets_proxy import Proxy, proxy_connect
@@ -188,7 +188,10 @@ async def main(user_id, use_proxy, proxies=None):
 
 
 if __name__ == "__main__":
-    user_id = 'xxxx-xxxx-xxxx-xxxx-xxxx-xxxx'
+    user_id = os.getenv('MT_GRASS_ID')
+    if not user_id:
+        user_id = '2595e120-4687-4286-aaaa-de52ea13a274'
+    logging.info(f"user id: {user_id}")
     use_proxy = False  # 设置为 True 则使用代理，False 则不使用
     # 账号密码模式 'socks5://username:password@address:port'
     # 无密码模式 'socks5://address:port'
