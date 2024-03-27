@@ -158,7 +158,7 @@ async def main(user_id, use_proxy, proxies=None):
         for proxy in proxies:
             device_id = str(uuid.uuid4())
             logging.info(device_id)
-            uri_options = ["wss://proxy.wynd.network:4650/", "wss://proxy.wynd.network:4444"]
+            uri_options = ["wss://proxy.wynd.network:4650/"]
             # uri_options = ["wss://proxy.wynd.network:4444"]
             custom_headers = {
                 "User-Agent": Faker().chrome()
@@ -172,7 +172,7 @@ async def main(user_id, use_proxy, proxies=None):
     else:
         device_id = str(uuid.uuid4())
         logging.info(device_id)
-        uri_options = ["wss://proxy.wynd.network:4650/", "wss://proxy.wynd.network:4444"]
+        uri_options = ["wss://proxy.wynd.network:4650/"]
         #uri_options = ["wss://proxy.wynd.network:4650"]
         custom_headers = {
             "User-Agent": Faker().chrome()
@@ -189,7 +189,7 @@ async def main(user_id, use_proxy, proxies=None):
 
 if __name__ == "__main__":
     user_id = 'xxxx-xxxx-xxxx-xxxx-xxxx-xxxx'
-    use_proxy = True  # 设置为 True 则使用代理，False 则不使用
+    use_proxy = False  # 设置为 True 则使用代理，False 则不使用
     # 账号密码模式 'socks5://username:password@address:port'
     # 无密码模式 'socks5://address:port'
 
